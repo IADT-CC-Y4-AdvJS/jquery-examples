@@ -42,3 +42,16 @@ div.button {
   text-align: center;
   margin-top: 20px;
 }
+div.button button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+img.redBorder {
+  border: thick solid red;
+}
+img.greenBorder {
+  border: thick solid green;
+}
+img.blueBorder {
+  border: thick solid blue;
+}
