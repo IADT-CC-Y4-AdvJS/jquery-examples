@@ -1,0 +1,21 @@
+.red {
+  color: red;
+}
+
+form#registrationForm  abbr[title] {
+  text-decoration: none;
+  color: red;
+}
+
+form#registrationForm  input:focus,
+form#registrationForm  textarea:focus,
+form#registrationForm  input:invalid:focus,
+form#registrationForm  textarea:invalid:focus {
+  border: thin solid blue;
+}
+
+form#registrationForm  input:invalid,
+form#registrationForm  textarea:invalid {
+  border: thin solid red;
+  box-shadow: none;
+}

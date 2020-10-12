@@ -1,0 +1,83 @@
+body {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form#registrationForm fieldset {
+  padding-top: 1em;
+  margin-bottom: 1em;
+}
+form#registrationForm fieldset legend {
+  font-size: 1.17em;
+}
+
+form#registrationForm .form-field {
+  margin-bottom: 0.5em;
+}
+
+form#registrationForm .form-field > label {
+  display: inline-block;
+  width: 10em;
+  text-align: right;
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+  vertical-align: top;
+}
+
+form#registrationForm .form-field input[type=text],
+form#registrationForm .form-field input[type=password],
+form#registrationForm .form-field input[type=number],
+form#registrationForm .form-field input[type=email],
+form#registrationForm .form-field input[type=date],
+form#registrationForm .form-field input[type=tel],
+form#registrationForm .form-field input[type=url],
+form#registrationForm .form-field input[type=file],
+form#registrationForm .form-filed textarea,
+form#registrationForm .form-field select {
+  border-width: 1px;
+  padding: 0.2em;
+  font-family: Arial;
+}
+
+form#registrationForm .form-field .checkboxes,
+form#registrationForm .form-field .radiobuttons {
+  display: inline-block;
+}
+
+form#registrationForm .form-field .checkboxes label,
+form#registrationForm .form-field .radiobuttons label {
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+form#registrationForm input#email,
+form#registrationForm input#password,
+form#registrationForm input#name,
+form#registrationForm textarea#address,
+form#registrationForm input#website,
+form#registrationForm input#card-name {
+  width: 32em;
+}
+form#registrationForm input#password,
+form#registrationForm input#phone {
+  width: 16em;
+}
+form#registrationForm input#dob,
+form#registrationForm select#country,
+form#registrationForm input#card-number {
+  width: 12em;
+}
+form#registrationForm input#postcode {
+  width: 8em;
+}
+form#registrationForm input#height {
+  width: 6em;
+}
+form#registrationForm input#card-security {
+  width: 4em;
+}
