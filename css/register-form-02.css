@@ -1,0 +1,13 @@
+.red {
+  color: red;
+}
+
+form#registrationForm  abbr[title] {
+  text-decoration: none;
+  color: red;
+}
+
+form#registrationForm  span.error {
+  color: red;
+  padding-left: 0.5em;
+}
