@@ -250,13 +250,13 @@ $(document).ready(function () {
       }
     };
 
-    let cardNumberField = $("#card-number")[0];
-    let cardNumberError = $("#card-number + span.error")[0];
+    let cardNumberField = $("#card_number")[0];
+    let cardNumberError = $("#card_number + span.error")[0];
     let cardNumber = cardNumberField.value;
     if (cardNumber.length > 0) {
-      let checkedCards = $("input[name=card-type]:checked");
+      let checkedCards = $("input[name=card_type]:checked");
       if (checkedCards.length === 1) {
-        let cardTypeField = $("input[name=card-type]:checked")[0];
+        let cardTypeField = $("input[name=card_type]:checked")[0];
         let cardType = cardTypeField.value;
         let constraint = new RegExp(constraints[cardType].regexp, "");
         if (!constraint.test(cardNumber)) {
@@ -293,13 +293,13 @@ $(document).ready(function () {
       }
     };
 
-    let cardSecurityField = $("#card-security")[0];
-    let cardSecurityError = $("#card-security + span.error")[0];
+    let cardSecurityField = $("#card_security")[0];
+    let cardSecurityError = $("#card_security + span.error")[0];
     let cardSecurity = cardSecurityField.value;
     if (cardSecurity.length > 0) {
-      let checkedCards = $("input[name=card-type]:checked");
+      let checkedCards = $("input[name=card_type]:checked");
       if (checkedCards.length === 1) {
-        let cardTypeField = $("input[name=card-type]:checked")[0];
+        let cardTypeField = $("input[name=card_type]:checked")[0];
         let cardType = cardTypeField.value;
         let constraint = new RegExp(constraints[cardType].regexp, "");
         if (!constraint.test(cardSecurity)) {
@@ -322,8 +322,8 @@ $(document).ready(function () {
   }
 
   function checkCardName() {
-    let cardNameField = $("#card-name")[0];
-    let cardNameError = $("#card-name + span.error")[0];
+    let cardNameField = $("#card_name")[0];
+    let cardNameError = $("#card_name + span.error")[0];
     if (!cardNameField.validity.valid) {
       if (cardNameField.validity.tooLong) {
         cardNameError.textContent = `Card name should be at most ${ cardNameField.maxLength } characters; you entered ${ cardNameField.value.length }.`;
@@ -346,9 +346,9 @@ $(document).ready(function () {
   $("input#postcode").on("blur", checkPostCode);
   $("#phone").on("blur", checkPhone);
   $("#website").on("blur", checkWebsite);
-  $("input[name=card-type]").on("change", checkCardType);
-  $("input#card-number").on("blur", checkCardNumber);
-  $("input#card-security").on("blur", checkCardSecurity);
-  $("input#card-name").on("blur", checkCardName);
+  $("input[name=card_type]").on("change", checkCardType);
+  $("input#card_number").on("blur", checkCardNumber);
+  $("input#card_security").on("blur", checkCardSecurity);
+  $("input#card_name").on("blur", checkCardName);
 
 });

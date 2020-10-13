@@ -60,7 +60,7 @@ form#registrationForm input#password,
 form#registrationForm input#name,
 form#registrationForm textarea#address,
 form#registrationForm input#website,
-form#registrationForm input#card-name {
+form#registrationForm input#card_name {
   width: 32em;
 }
 form#registrationForm input#password,
@@ -69,7 +69,7 @@ form#registrationForm input#phone {
 }
 form#registrationForm input#dob,
 form#registrationForm select#country,
-form#registrationForm input#card-number {
+form#registrationForm input#card_number {
   width: 12em;
 }
 form#registrationForm input#postcode {
@@ -78,6 +78,6 @@ form#registrationForm input#postcode {
 form#registrationForm input#height {
   width: 6em;
 }
-form#registrationForm input#card-security {
+form#registrationForm input#card_security {
   width: 4em;
 }
