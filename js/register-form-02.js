@@ -277,6 +277,19 @@ $(document).ready(function () {
     }
   }
 
+  function checkCardExpiry() {
+    let cardExpiryField = $("#card_expiry")[0];
+    let cardExpiryError = $("#card_expiry + span.error")[0];
+    if (!cardExpiryField.validity.valid) {
+      if (cardExpiryField.validity.patternMismatch) {
+        cardExpiryError.textContent = `Card Expiry should be two digits, a forward slash /, and two digits.`;
+      }
+    }
+    else {
+      cardExpiryError.textContent = "";
+    }
+  }
+
   function checkCardSecurity() {
     let constraints = {
       "visa" : {

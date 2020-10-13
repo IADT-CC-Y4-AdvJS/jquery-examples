@@ -78,6 +78,7 @@ form#registrationForm input#postcode {
 form#registrationForm input#height {
   width: 6em;
 }
-form#registrationForm input#card_security {
+form#registrationForm input#card_security,
+form#registrationForm input#card_expiry {
   width: 4em;
 }
