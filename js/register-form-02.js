@@ -286,7 +286,19 @@ $(document).ready(function () {
       }
     }
     else {
-      cardExpiryError.textContent = "";
+      let month = parseInt($("#card_expiry").val().split("/")[0]);
+      let year = parseInt("20" + ($("#card_expiry").val().split("/")[1]));
+      let today = new Date();
+      let thisMonth = today.getMonth() + 1;
+      let thisYear = today.getFullYear();
+      if ((year === thisYear && month < thisMonth) || (year < thisYear) || (year > thisYear && !(1 <= month && month <= 12))) {
+        let message = `Card Expiry should be valid date in the future.`;
+        cardExpiryError.textContent = message;
+        cardExpiryField.setCustomValidity(message);
+      }
+      else {
+        cardExpiryError.textContent = "";
+      }
     }
   }
 
@@ -361,6 +373,7 @@ $(document).ready(function () {
   $("#website").on("blur", checkWebsite);
   $("input[name=card_type]").on("change", checkCardType);
   $("input#card_number").on("blur", checkCardNumber);
+  $("input#card_expiry").on("blur", checkCardExpiry);
   $("input#card_security").on("blur", checkCardSecurity);
   $("input#card_name").on("blur", checkCardName);
 
