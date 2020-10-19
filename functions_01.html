@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Function invocation context</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+      //-----------------------------------------------------------------
+      // Invocation as a function
+      //-----------------------------------------------------------------
+      function greeting() {
+        console.log("Hello, my name is " + this.first_name);
+      }
+      greeting();
+      window.first_name = "Francis";
+      greeting();
+      //-----------------------------------------------------------------
+      // Invocation as a method
+      //-----------------------------------------------------------------
+      var person_01 = {
+        first_name: "Dara",
+        greeting: function() {
+          console.log("Hello, my name is " + this.first_name);
+        }
+      }
+      person_01.greeting();
+      //-----------------------------------------------------------------
+      // Invocation as a constructor
+      //-----------------------------------------------------------------
+      function Person(fn) {
+        this.first_name = fn;
+        this.greeting = function() {
+          console.log("Hello, my name is " + this.first_name);
+        }
+      }
+      var person_02 = new Person("Francis");
+      person_02.greeting();
+      //-----------------------------------------------------------------
+      // Invocation using apply()
+      //-----------------------------------------------------------------
+      function greeting2() {
+        console.log("Conas tá tú, my name is " + this.first_name);
+      }
+      var person_03 = {
+        first_name: "Jamie"
+      };
+      greeting2.apply(person_03);
+      greeting2.apply(person_02);
+      greeting2.apply(person_01);
+      //-----------------------------------------------------------------
+    </script>
+  </body>
+</html>

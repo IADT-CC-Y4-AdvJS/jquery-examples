@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closures</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+      //-----------------------------------------------------------------
+      // Closures
+      //-----------------------------------------------------------------
+      var new_counter = function() {
+        var counter = 0;
+
+        function changeBy(value) {
+          counter = counter + value;
+        }
+
+        return {
+          increment: function() {
+            changeBy(1);
+          },
+
+          decrement: function() {
+            changeBy(-1);
+          },
+
+          value: function() {
+            return counter;
+          }
+        }
+      };
+      var c1 = new_counter();
+      console.log("c1.value() = " + c1.value());
+      c1.increment();
+      c1.increment();
+      console.log("c1.value() = " + c1.value());
+      console.log("c1.counter = " + c1.counter);
+      var c2 = new_counter();
+      c2.decrement();
+      console.log("c1.value() = " + c1.value());
+      console.log("c2.value() = " + c2.value());
+      //-----------------------------------------------------------------
+    </script>
+  </body>
+</html>
