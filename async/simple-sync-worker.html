@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple synchronous JavaScript example</title>
+  </head>
+  <body>
+    <p>
+      This example calculates the 10 million dates in a separate worker thread. Now when you
+      click the button, the browser is able to display the paragraph before the dates have
+      finished calculating.
+    </p>
+    <button>Click me</button>
+    <script>
+      const btn = document.querySelector('button');
+      const worker = new Worker('worker.js');
+
+      btn.addEventListener('click', () => {
+        worker.postMessage('Go!');
+
+        let pElem = document.createElement('p');
+        pElem.textContent = 'This is a newly-added paragraph.';
+        document.body.appendChild(pElem);
+      });
+
+      worker.onmessage = function(e) {
+        console.log(e.data);
+      }
+    </script>
+  </body>
+</html>

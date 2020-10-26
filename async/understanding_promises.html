@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fetching data with promises</title>
+  </head>
+  <body>
+    <script>
+      let url = 'images/coffee.jpg';
+      let promise_01 = fetch(url);
+      let promise_02 = promise_01.then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+          return response.blob();
+        }
+      });
+      let promise_03 = promise_02.then(myBlob => {
+        let objectURL = URL.createObjectURL(myBlob);
+        let image = document.createElement('img');
+        image.src = objectURL;
+        document.body.appendChild(image);
+      });
+      let promise_04 = promise_03.catch(err => {
+        console.log('There has been a problem with your fetch operation: ' + err.message);
+      });
+    </script>
+  </body>
+</html>

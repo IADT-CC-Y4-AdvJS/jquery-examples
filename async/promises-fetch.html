@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fetching data with promises</title>
+  </head>
+  <body>
+    <script>
+      let url = 'images/coffee.jpg';
+      fetch(url)
+      .then(function(response) {
+          return response.blob();
+      })
+      .then(function(blob) {
+        let objectURL = URL.createObjectURL(blob);
+        let image = document.createElement('img');
+        image.src = objectURL;
+        document.body.appendChild(image);
+      })
+      .catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+      });
+    </script>
+  </body>
+</html>
