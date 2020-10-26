@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Person greeter app</title>
+  </head>
+  <body>
+    <script>
+      let myGreeting = setTimeout(function() {
+        alert('Hello, Universe!');
+      }, 2000);
+
+      clearTimeout(myGreeting);
+
+      function sayHi(who) {
+        alert(`Hello ${who}!`);
+      }
+
+      let myOtherGreeting = setTimeout(sayHi, 2000, 'World');
+    </script>
+  </body>
+</html>
